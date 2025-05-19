@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Send Payment Email</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a1d37;
+      color: white;
+      padding: 2rem;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 8px;
+    }
+    input, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      border: none;
+    }
+    input {
+      font-size: 1rem;
+    }
+    button {
+      background-color: #00bcd4;
+      color: #0a1d37;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Send Payment Email</h2>
+  <label>
+    Customer Name:
+    <input id="name" type="text" placeholder="Name" required />
+  </label>
+  <label>
+    Customer Email:
+    <input id="email" type="email" placeholder="Email" required />
+  </label>
+  <label>
+    Amount Owed (USD):
+    <input id="amount" type="number" placeholder="Amount" required />
+  </label>
+
+  <button onclick="sendEmail()">Send Email</button>
+
+  <script>
+    // Initialize EmailJS with your public key
+    emailjs.init('vpxWytAI2bejoOkM5');
+
+    function sendEmail() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const amount = document.getElementById('amount').value.trim();
+
+      if (!name || !email || !amount) {
+        alert('Please fill all fields.');
+        return;
+      }
+
+      const templateParams = {
+        name: name,
+        to_email: email,
+        amount: amount,
+        paypal_link: `https://paypal.me/isaiah40214/${amount}`
+      };
+
+      emailjs.send('service_mg0wxlp', 'template_sqs18op', templateParams)
+        .then(() => {
+          alert('Email sent successfully!');
+        })
+        .catch((error) => {
+          console.error('Email send error:', error);
+          alert('Failed to send email. Check console for details.');
+        });
+    }
+  </script>
+
+</body>
+</html>

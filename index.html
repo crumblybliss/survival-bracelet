@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Dashboard | Tactics & Treats</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #0a1d37;
+    color: white;
+    margin: 0;
+    padding: 2rem;
+  }
+  header {
+    background-color: #003366;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #00bcd4;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1.5rem;
+  }
+  a.button {
+    display: block;
+    background-color: #00bcd4;
+    color: #0a1d37;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,188,212,0.5);
+    transition: background-color 0.3s ease;
+  }
+  a.button:hover {
+    background-color: #0097a7;
+    color: white;
+  }
+  footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<header>Tactics & Treats Admin Dashboard</header>
+
+<main>
+  <a href="paymint.html" class="button" title="Send payment emails to customers">💌 Send Payment Emails</a>
+  <a href="manage-products.html" class="button" title="Add, edit, or delete products">🍪 Manage Products</a>
+  <a href="view-orders.html" class="button" title="View and manage customer orders">📦 View Orders</a>
+  <a href="manage-promocodes.html" class="button" title="Create and manage promo codes">🏷️ Manage Promo Codes</a>
+  <a href="user-management.html" class="button" title="Manage user roles and permissions">👥 User Management</a>
+  <a href="reports.html" class="button" title="View sales reports and analytics">📊 Reports & Analytics</a>
+</main>
+
+<footer>© 2025 Tactics & Treats. All rights reserved.</footer>
+
+</body>
+</html>
